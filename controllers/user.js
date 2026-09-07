@@ -38,7 +38,7 @@ async function handleUpdateDataById(req, res) {
             email: req.body.email,
             phone: req.body.phone,
             location: req.body.location,
-            profileImageUrl: req.file ? `/images/${req.file.path}` : "/images"
+            profileImageUrl: req.file ? `/images/${req.file.path}` : "/images/avatar.png"
         },
         { new: true }
     );
