@@ -38,7 +38,7 @@ async function handleRegister(req, res) {
             email,
             password: hasedPassword,
         })
-        return res.status(401).json({ msg: "Registered successfull", data: user })
+        return res.status(201).json({ msg: "Registered successfull", data: user })
     } catch (error) {
         res.status(500).json({ msg: error.message })
     }
