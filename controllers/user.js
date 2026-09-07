@@ -59,18 +59,19 @@ async function hanldePostData(req, res) {
     console.log(req.file)
     const lastUser = await userData.findOne().sort({ id: -1 });
     const newUserId = lastUser ? lastUser.id + 1 : 1;
-    const { fullName, email, phone, location } = req.body;
-    await userData.create({
+    const { fullName, email, phone, location,description } = req.body;
+    const data = await userData.create({
         id: newUserId,
         fullName,
         email,
         phone,
         location,
+        description,
         profileImage: req.file
             ? `/images/${req.file.filename}`
             : "/images/avatar.png"
     })
-    return res.json({ msg: "Success" })
+    return res.json({ msg: "Success", data:data })
 }
 
 module.exports = {
