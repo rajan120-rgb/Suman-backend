@@ -3,7 +3,6 @@ const loginUser = require("../models/login")
 const jwt = require("jsonwebtoken");
 
 const auth = async (req,res,next)=>{
-     console.log("AUTH MIDDLEWARE RUNNING");
     try {
         const bearerHeader = req.headers['authorization']
         if(typeof bearerHeader != 'undefined'){
