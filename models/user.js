@@ -26,7 +26,7 @@ const userShema = new mongoose.Schema({
     profileImage:{
         type:String,
         // default:'/images/avatar.png'
-        required:true
+        // required:true
     }
 
 },{timestamps:true})
