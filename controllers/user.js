@@ -38,6 +38,7 @@ async function handleUpdateDataById(req, res) {
             email: req.body.email,
             phone: req.body.phone,
             location: req.body.location,
+            description:req.body.description,
             profileImageUrl: req.file ? `/images/${req.file.path}` : "/images/avatar.png"
         },
         { new: true }
@@ -68,8 +69,8 @@ async function hanldePostData(req, res) {
         location,
         description,
         profileImage: req.file
-            ? `/images/${req.file.filename}`
-            : "/images/avatar.png"
+            ? `http://localhost:8000/images/${req.file.filename}`
+            : "http://localhost:8000/images/avatar.png"
     })
     return res.json({ msg: "Success", data:data })
 }
